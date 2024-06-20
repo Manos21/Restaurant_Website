@@ -1,0 +1,347 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+a {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit text color from parent */
+  cursor: pointer; /* Change cursor to pointer */
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+html {
+  font-family: "League Spartan", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: large;
+}
+
+.hd-xl {
+  font-size: 80px;
+  font-weight: 300;
+  line-height: 80px;
+  letter-spacing: -1px;
+}
+.hd-lg {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 48px;
+  letter-spacing: -0.5px;
+}
+.hd-md {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: -0.25px;
+}
+.hd-sm {
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
+
+.bd-1 {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0;
+}
+@media screen and (max-width: 768px) {
+  .bd-1 {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 26px;
+  }
+}
+
+.white {
+  color: white;
+}
+
+.dark {
+  color: rgb(36, 43, 55);
+}
+
+.container {
+  padding-inline: 1.3rem;
+  margin: 0 auto;
+}
+
+.hero {
+  background-image: url("/images/homepage/hero-bg-mobile@2x.jpg");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  padding-top: 2rem;
+}
+.hero .hero-flex {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 10.5rem;
+  background-color: rgb(13, 13, 13);
+  padding-top: 1.5rem;
+  padding-bottom: 7.5rem;
+}
+.hero .hero-flex h1 {
+  font-size: 32px;
+  line-height: 40px;
+  letter-spacing: -0.4px;
+}
+.hero .hero-flex .button {
+  margin-top: 1.5rem;
+}
+
+.logo {
+  width: 105px;
+  margin-bottom: 0.5rem;
+}
+
+.button {
+  background-color: white;
+  display: inline-block;
+  padding: 1rem 3rem;
+  color: white;
+  background-color: rgb(13, 13, 13);
+  border: solid white 1px;
+}
+.button.dark {
+  background-color: transparent;
+}
+
+.sec-1 {
+  margin-top: -3rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  padding-bottom: 5rem;
+}
+.sec-1 .pic-t {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.sec-1 .pic-t .descr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.image {
+  box-shadow: 0px 50px 100px -40px grey;
+}
+
+.sec-2 {
+  background-color: rgb(13, 13, 13);
+  padding-block: 4rem;
+}
+.sec-2 .pattern {
+  margin: 0 auto;
+  margin-bottom: 3rem;
+}
+.sec-2-flex {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  align-items: center;
+  text-align: center;
+}
+.sec-2-flex .highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.sec-2-flex .foods {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.sec-2-flex .foods .food {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding-bottom: 2rem;
+}
+.sec-2-flex .foods .food:not(:last-child) {
+  border-bottom: solid rgba(151, 151, 151, 0.4117647059) 0.1px;
+}
+.sec-2-flex .foods .food__details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.sec-3 {
+  padding-block: 4rem;
+}
+.sec-3 .bookings {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.sec-3 .details {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+.sec-3 .options {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.sec-3 .options .option {
+  text-align: center;
+  color: rgba(76, 76, 76, 0.5176470588);
+}
+.sec-3 .options .option input {
+  display: none;
+}
+.sec-3 .options .option span {
+  position: relative;
+  text-align: center;
+  padding: 7px;
+}
+.sec-3 .options .option input:checked + span {
+  color: #4C4C4C;
+}
+.sec-3 .options .option input:checked + span::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 50px;
+  height: 1px;
+  background-color: black;
+  transform: translateX(-50%);
+}
+.sec-3 .options .option input:checked + span label {
+  cursor: pointer;
+  color: rgba(76, 76, 76, 0.5098039216);
+}
+
+.sec-4 {
+  background-image: url("/images/homepage/ready-bg-mobile@2x.jpg");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  padding-block: 5rem;
+  text-align: center;
+}
+.sec-4 .ready {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+footer {
+  background-color: rgb(13, 13, 13);
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 28px;
+  letter-spacing: 2px;
+  padding-block: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  text-align: center;
+  font-weight: 300;
+}
+footer .info-flex {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+footer .info {
+  display: flex;
+  flex-direction: column;
+}/*# sourceMappingURL=style.css.map */
