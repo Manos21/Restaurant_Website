@@ -370,6 +370,12 @@ html {
     box-shadow: none;
   }
 }
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .sec-1 {
+    margin-top: 3rem;
+    margin-bottom: 0rem;
+  }
+}
 
 .sec-2 {
   background-color: rgb(13, 13, 13);
