@@ -28,6 +28,7 @@ ol[role=list] {
 body {
   min-height: 100vh;
   line-height: 1.5;
+  overflow-x: hidden;
 }
 
 /* Set shorter line heights on headings and interactive elements */
@@ -103,11 +104,32 @@ html {
   line-height: 80px;
   letter-spacing: -1px;
 }
+@media screen and (max-width: 480px) {
+  .hd-xl {
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: -0.4px;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 768px) {
+  .hd-xl {
+    font-size: 48px;
+    line-height: 64px;
+    letter-spacing: -0.6px;
+  }
+}
 .hd-lg {
   font-size: 48px;
   font-weight: 700;
   line-height: 48px;
   letter-spacing: -0.5px;
+}
+@media screen and (max-width: 480px) {
+  .hd-lg {
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: -0.4px;
+  }
 }
 .hd-md {
   font-size: 20px;
@@ -129,12 +151,18 @@ html {
   line-height: 30px;
   letter-spacing: 0;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 480px) {
   .bd-1 {
     font-size: 16px;
     font-weight: 300;
     line-height: 26px;
   }
+}
+.bd-2 {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 26px;
+  letter-spacing: 0;
 }
 
 .white {
@@ -149,13 +177,34 @@ html {
   padding-inline: 1.3rem;
   margin: 0 auto;
 }
+@media screen and (min-width: 480px) {
+  .container {
+    padding-inline: 10%;
+  }
+}
 
 .hero {
   background-image: url("/images/homepage/hero-bg-mobile@2x.jpg");
   background-repeat: no-repeat;
-  background-position: center top;
+  background-position: top;
   background-size: cover;
   padding-top: 2rem;
+  position: relative;
+}
+@media screen and (min-width: 480px) {
+  .hero {
+    background-image: url("/images/homepage/hero-bg-tablet@2x.jpg");
+  }
+}
+@media screen and (min-width: 768px) {
+  .hero {
+    background-image: url("/images/homepage/hero-bg-desktop@2x.jpg");
+  }
+}
+@media screen and (min-width: 768px) {
+  .hero {
+    min-height: 820px;
+  }
 }
 .hero .hero-flex {
   display: flex;
@@ -168,13 +217,34 @@ html {
   padding-top: 1.5rem;
   padding-bottom: 7.5rem;
 }
-.hero .hero-flex h1 {
-  font-size: 32px;
-  line-height: 40px;
-  letter-spacing: -0.4px;
-}
 .hero .hero-flex .button {
   margin-top: 1.5rem;
+}
+@media screen and (min-width: 768px) {
+  .hero .hero-flex {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 38%;
+    height: 100%;
+    padding-right: 0;
+    display: flex;
+    align-items: start;
+    text-align: left;
+  }
+  .hero .hero-flex .logo {
+    padding-top: 2rem;
+  }
+  .hero .hero-flex h1 {
+    margin-right: -10rem;
+    margin-top: 5rem;
+  }
+  .hero .hero-flex p, .hero .hero-flex .button {
+    margin-right: -3.5rem;
+  }
+  .hero .hero-flex .button {
+    margin-top: 1rem;
+  }
 }
 
 .logo {
@@ -189,9 +259,22 @@ html {
   color: white;
   background-color: rgb(13, 13, 13);
   border: solid white 1px;
+  text-align: center;
 }
-.button.dark {
+.button.transparent {
   background-color: transparent;
+}
+.button:hover {
+  background-color: white;
+  color: rgb(13, 13, 13);
+  cursor: pointer;
+}
+.button.dark:hover {
+  border: black solid 1px;
+}
+
+.image {
+  box-shadow: 0px 50px 100px -40px grey;
 }
 
 .sec-1 {
@@ -201,11 +284,77 @@ html {
   flex-direction: column;
   gap: 5rem;
   padding-bottom: 5rem;
+  position: relative;
+  overflow: hidden;
+}
+@media screen and (min-width: 480px) {
+  .sec-1::after {
+    content: "";
+    position: absolute;
+    background-image: url("/images/patterns/pattern-curve-top-left.svg");
+    width: 895px;
+    height: 320px;
+    bottom: 0;
+    left: 50%;
+    overflow: hidden;
+  }
+}
+@media screen and (min-width: 768px) {
+  .sec-1::after {
+    bottom: 8rem;
+  }
 }
 .sec-1 .pic-t {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 2rem;
+}
+.sec-1 .pic-t picture {
+  position: relative;
+}
+@media screen and (min-width: 480px) {
+  .sec-1 .pic-t picture.pattern::after {
+    content: "";
+    position: absolute;
+    background-image: url("/images/patterns/pattern-lines.svg");
+    width: 160px;
+    height: 76px;
+    right: -50px;
+    bottom: 18%;
+    overflow: hidden;
+  }
+  .sec-1 .pic-t picture.curve1::after {
+    content: "";
+    position: absolute;
+    background-image: url("/images/patterns/pattern-curve-top-right.svg");
+    width: 895px;
+    height: 320px;
+    transform: translateY(-60%);
+    right: 50%;
+    overflow: hidden;
+  }
+}
+@media screen and (min-width: 768px) {
+  .sec-1 .pic-t {
+    display: flex;
+    flex-direction: row;
+    gap: 6rem;
+  }
+  .sec-1 .pic-t .descr {
+    align-items: start;
+    text-align: start;
+  }
+  .sec-1 .pic-t .descr img {
+    align-self: start;
+  }
+  .sec-1 .pic-t picture.curve1::after {
+    transform: translate(400px, -350px);
+  }
+  .sec-1 .pic-t:nth-of-type(2) picture {
+    order: 2;
+    z-index: 1;
+  }
 }
 .sec-1 .pic-t .descr {
   display: flex;
@@ -213,18 +362,32 @@ html {
   align-items: center;
   gap: 2rem;
 }
-
-.image {
-  box-shadow: 0px 50px 100px -40px grey;
+@media screen and (min-width: 768px) {
+  .sec-1 {
+    margin-bottom: -8rem;
+  }
+  .sec-1 .pic-t:nth-of-type(2) .image {
+    box-shadow: none;
+  }
 }
 
 .sec-2 {
   background-color: rgb(13, 13, 13);
   padding-block: 4rem;
 }
+@media screen and (min-width: 768px) {
+  .sec-2 {
+    padding-top: 10rem;
+  }
+}
 .sec-2 .pattern {
   margin: 0 auto;
   margin-bottom: 3rem;
+}
+@media screen and (min-width: 768px) {
+  .sec-2 .pattern {
+    margin-inline: 0;
+  }
 }
 .sec-2-flex {
   display: flex;
@@ -238,6 +401,25 @@ html {
   flex-direction: column;
   gap: 1rem;
 }
+@media screen and (min-width: 480px) {
+  .sec-2-flex .highlights {
+    padding-inline: 2rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .sec-2-flex .highlights {
+    padding-inline: 0;
+    width: 70%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .sec-2-flex {
+    flex-direction: row;
+    gap: 6rem;
+    text-align: left;
+    align-items: start;
+  }
+}
 .sec-2-flex .foods {
   display: flex;
   flex-direction: column;
@@ -246,8 +428,19 @@ html {
 .sec-2-flex .foods .food {
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 2rem;
   padding-bottom: 2rem;
+  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .sec-2-flex .foods .food picture {
+    align-self: flex-start;
+  }
+}
+@media screen and (min-width: 555px) {
+  .sec-2-flex .foods .food {
+    gap: 3rem;
+  }
 }
 .sec-2-flex .foods .food:not(:last-child) {
   border-bottom: solid rgba(151, 151, 151, 0.4117647059) 0.1px;
@@ -255,16 +448,96 @@ html {
 .sec-2-flex .foods .food__details {
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 0.4rem;
+  position: relative;
+}
+@media screen and (min-width: 555px) {
+  .sec-2-flex .foods .food__details::after {
+    content: "";
+    position: absolute;
+    background-color: rgb(158, 127, 102);
+    height: 1px;
+    width: 32px;
+    top: 10px;
+    left: -55px;
+  }
+}
+@media screen and (min-width: 555px) {
+  .sec-2-flex .foods .food {
+    flex-direction: row;
+    text-align: left;
+    align-items: center;
+  }
 }
 
 .sec-3 {
   padding-block: 4rem;
+  text-align: center;
+  position: relative;
+}
+@media screen and (min-width: 768px) {
+  .sec-3 {
+    padding-block: 10rem;
+  }
+}
+@media screen and (min-width: 480px) {
+  .sec-3::after {
+    content: "";
+    position: absolute;
+    background-image: url("/images/patterns/pattern-curve-top-right.svg");
+    width: 895px;
+    height: 320px;
+    top: 0;
+    right: 50%;
+    overflow: hidden;
+  }
+}
+@media screen and (min-width: 480px) and (min-width: 768px) {
+  .sec-3::after {
+    right: 68%;
+  }
 }
 .sec-3 .bookings {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 2rem;
+}
+.sec-3 .bookings picture {
+  z-index: 999;
+  position: relative;
+}
+@media screen and (min-width: 480px) {
+  .sec-3 .bookings picture::after {
+    content: "";
+    position: absolute;
+    background-image: url("/images/patterns/pattern-lines.svg");
+    width: 160px;
+    height: 76px;
+    left: -40px;
+    top: -38px;
+    overflow: hidden;
+  }
+}
+@media screen and (min-width: 768px) {
+  .sec-3 .bookings {
+    flex-direction: row;
+    gap: 6rem;
+    text-align: start;
+  }
+  .sec-3 .bookings .details {
+    display: flex;
+    align-items: start;
+  }
+  .sec-3 .bookings .details form {
+    order: 2;
+  }
+  .sec-3 .bookings .options {
+    align-items: start;
+  }
+}
+.sec-3 .bookings .undisplayed {
+  display: none;
 }
 .sec-3 .details {
   display: flex;
@@ -276,6 +549,9 @@ html {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+.sec-3 .options label:hover {
+  cursor: pointer;
 }
 .sec-3 .options .option {
   text-align: center;
@@ -302,9 +578,8 @@ html {
   background-color: black;
   transform: translateX(-50%);
 }
-.sec-3 .options .option input:checked + span label {
-  cursor: pointer;
-  color: rgba(76, 76, 76, 0.5098039216);
+.sec-3 .events h2 {
+  margin-bottom: 1rem;
 }
 
 .sec-4 {
@@ -315,11 +590,27 @@ html {
   padding-block: 5rem;
   text-align: center;
 }
+@media screen and (min-width: 480px) {
+  .sec-4 {
+    background-image: url("/images/homepage/ready-bg-tablet@2x.jpg");
+  }
+}
+@media screen and (min-width: 768px) {
+  .sec-4 {
+    background-image: url("/images/homepage/ready-bg-desktop@2x.jpg");
+  }
+}
 .sec-4 .ready {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
+}
+@media screen and (min-width: 768px) {
+  .sec-4 .ready {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 
 footer {
@@ -335,6 +626,7 @@ footer {
   gap: 2rem;
   text-align: center;
   font-weight: 300;
+  justify-content: space-between;
 }
 footer .info-flex {
   display: flex;
@@ -344,4 +636,178 @@ footer .info-flex {
 footer .info {
   display: flex;
   flex-direction: column;
+}
+@media screen and (min-width: 768px) {
+  footer {
+    flex-direction: row;
+    gap: 15vw;
+  }
+  footer .info-flex {
+    flex-direction: row;
+    gap: 15vw;
+  }
+}
+
+.ok {
+  z-index: 1000;
+}
+
+.hero-booking {
+  background-image: url("/images/booking/hero-bg-mobile@2x.jpg");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  padding-top: 2rem;
+  padding-bottom: 12rem;
+}
+@media screen and (min-width: 480px) {
+  .hero-booking {
+    background-image: url("/images/booking/hero-bg-tablet@2x.jpg");
+  }
+}
+@media screen and (min-width: 768px) {
+  .hero-booking {
+    background-image: url("/images/booking/hero-bg-desktop@2x.jpg");
+  }
+}
+.hero-booking p {
+  max-width: 700px;
+}
+.hero-booking .hero-flex {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  text-align: center;
+}
+.hero-booking .hero-flex .logo {
+  margin-bottom: 2rem;
+}
+@media screen and (min-width: 480px) {
+  .hero-booking a {
+    align-self: flex-start;
+  }
+}
+@media screen and (min-width: 1300px) {
+  .hero-booking .hero-flex {
+    align-items: flex-start;
+  }
+  .hero-booking p {
+    text-align: start;
+    width: 450px;
+  }
+  .hero-booking a {
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+  }
+}
+
+.form-container {
+  padding-bottom: 6rem;
+}
+.form-container .form {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  box-shadow: 0px 50px 100px -40px grey;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  margin-top: -7rem;
+  gap: 1.8rem;
+  max-width: 540px;
+  margin-inline: auto;
+}
+@media screen and (min-width: 1300px) {
+  .form-container .form {
+    margin-inline: 0;
+    margin-left: auto;
+  }
+}
+.form-container .form label {
+  font-weight: 600;
+}
+.form-container .form .name, .form-container .form .email, .form-container .form .people, .form-container .form select {
+  background: none;
+  border: none;
+  border-bottom: black solid 1px;
+  padding-bottom: 1.2rem;
+  padding-top: 0.4rem;
+  padding-inline: 0.7rem;
+  width: 100%;
+}
+.form-container .form .name:focus, .form-container .form .email:focus, .form-container .form .people:focus, .form-container .form select:focus {
+  outline: none;
+  border-bottom: black solid 1px;
+}
+.form-container .form .form-group {
+  width: 100%;
+}
+.form-container .custom-date, .form-container .custom-time {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+@media screen and (min-width: 700px) {
+  .form-container .form-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .form-container .custom-date select, .form-container .custom-time select {
+    width: 80px;
+  }
+}
+.form-container .people {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.form-container .people button {
+  background: none;
+  border: none;
+  padding: 10px;
+}
+.form-container .people button:hover {
+  cursor: pointer;
+}
+.form-container .placeholder {
+  color: rgba(0, 0, 0, 0.5333333333);
+}
+.form-container .button {
+  width: 100%;
+  text-align: center;
+}
+@media screen and (min-width: 1300px) {
+  .form-container {
+    margin-top: -20rem;
+    position: relative;
+  }
+  .form-container::after {
+    content: "";
+    position: absolute;
+    background-image: url("images/patterns/pattern-curve-top-right.svg");
+    width: 895px;
+    height: 320px;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -1;
+    transform: scaleY(-1);
+  }
+  .form-container .form {
+    position: relative;
+  }
+  .form-container .form::after {
+    content: "";
+    position: absolute;
+    background-image: url("images/patterns/pattern-lines.svg");
+    width: 160px;
+    height: 76px;
+    left: -80px;
+    bottom: -30px;
+    overflow: hidden;
+    z-index: -1;
+  }
 }/*# sourceMappingURL=style.css.map */

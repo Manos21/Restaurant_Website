@@ -1,40 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Dine Website Challenge</title>
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Frontend Mentor | Dine Website Challenge</title>
+  </head>
 <body>
 
-  Reservations
-
-  We can’t wait to host you. If you have any special requirements please feel free to 
-  call on the phone number below. We’ll be happy to accommodate you.
-
-
-
-  Name
-  Email
-  Pick a date
-  Pick a time
-
-  Make Reservation
+  <div class="hero-booking">
+    <div class="hero-flex container">
+      <a href="index.html"><img class="logo" src="./images/logo.svg" alt=""></a>
+      <h1 class="hd-xl white">Reservations</h1>
+      <p class="bd-1 white">
+        We can’t wait to host you. If you have any special requirements please feel free to
+        call on the phone number below. We’ll be happy to accommodate you.
+      </p>
+    </div>
+  </div>
 
 
 
-  Marthwaite, Sedbergh
-  Cumbria
-  +00 44 123 4567
+  <div class="form-container  container">
+    <form class="form" action="#" method="post" class="reservation-form">
+        <input class="name" type="text" id="name" name="name" required placeholder="Name">
+        <input class="email" type="email" id="email" name="email" required placeholder="Email">
+        <div class="form-group date">
+            <label>Pick a date</label>
+            <div class="custom-date">
+              <select id="day" name="day" required class="placeholder">
+                <option value="" selected disabled>DD</option>
+              </select>
+              <select id="month" name="month" required class="placeholder">
+                <option value="" selected disabled>MM</option>
+              </select>
+              <select id="year" name="year" required class="placeholder">
+                <option value="" selected disabled>YYYY</option>
+              </select>
+          </div>
+        </div>
 
-  Open Times
-  Mon - Fri: 09:00 AM - 10:00 PM
-  Sat - Sun: 09:00 AM - 11:30 PM
+        <div class="form-group">
+            <label>Pick a time</label>
+            <div class="custom-time">
+              <select id="hour" name="hour" required class="placeholder">
+                <option value="" selected disabled>Hr</option>
+              </select>
+              <select id="minute" name="minute" required class="placeholder">
+                <option value="" selected disabled>Min</option>
+              </select>
+              <select id="ampm" name="ampm" required class="placeholder">
+                  <option value="AM" selected disabled>AM</option>
+                  <option value="AM">AM</option>
+                  <option value="PM">PM</option>
+              </select>
+          </div>
+        </div>
+        <div class="people">
+            <button type="button" id="decrease">
+              <img src="images\icons\icon-minus.svg" alt="-">
+            </button>
+            <span id="people-count" class="hd-md">1 person</span>
+            <button type="button" id="increase">
+              <img src="images\icons\icon-plus.svg" alt="+">
+            </button>
+        </div>
 
+        <button id="submitButton" type="submit" class="button dark hd-sm">Make Reservation</button>
+
+    </form>
+  </div>
+
+
+
+  <footer class="white container">
+    <a href="index.html"><img class="logo" src="./images/logo.svg" alt=""></a>
+    <div class="info-flex">
+      <div class="info">
+        <span>Marthwaite, Sedbergh</span>
+        <span>Cumbria</span>
+        <span>+00 44 123 4567</span>
+      </div>
+      <div class="info">
+        <span>Open Times</span>
+        <span>Mon - Fri: 09:00 AM - 10:00 PM</span>
+        <span>Sat - Sun: 09:00 AM - 11:30 PM</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

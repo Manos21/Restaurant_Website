@@ -14,19 +14,23 @@
 <body>
   <div class="hero">
     <div class="hero-flex  container">
-      <img class="logo" src="./images/logo.svg" alt="">
+      <a href="index.html"><img class="logo" src="./images/logo.svg" alt=""></a>
       <h1 class="hd-xl white">Exquisite dining since 1989</h1>
-      <p class="bd-2 white">
+      <p class="bd-1 white">
         Experience our seasonal menu in beautiful country surroundings. Eat the freshest produce from
         the comfort of our farmhouse.
       </p>
-      <div class="button hd-sm"><a href="#">Book a table</a></div>
+      <a class="button hd-sm" href="booking.html">Book a table</a>
     </div>
   </div>
 
 <section class="sec-1 container dark">
   <div class="pic-t">
-    <img class="image" src="images\homepage\enjoyable-place-mobile@2x.jpg" alt="">
+    <picture class="curve1">
+      <source media="(min-width: 768px)" srcset="images\homepage\enjoyable-place-desktop@2x.jpg"/>
+      <source media="(min-width: 480px)" srcset="images\homepage\enjoyable-place-tablet@2x.jpg"/>
+      <img class="image" src="images\homepage\enjoyable-place-mobile@2x.jpg" alt="">
+    </picture>
     <div class="descr">
       <img src="images\patterns\pattern-divide.svg" alt="">
       <h2 class="hd-lg">Enjoyable place for all the family</h2>
@@ -38,7 +42,11 @@
   </div>
 
   <div class="pic-t">
-    <img class="image" src="images\homepage\locally-sourced-mobile@2x.jpg" alt="">
+    <picture class="pattern">
+      <source media="(min-width: 768px)" srcset="images\homepage\locally-sourced-desktop@2x.jpg"/>
+      <source media="(min-width: 480px)" srcset="images\homepage\locally-sourced-tablet@2x.jpg"/>
+      <img class="image" src="images\homepage\locally-sourced-mobile@2x.jpg" alt="">
+    </picture>
     <div class="descr">
       <img src="images\patterns\pattern-divide.svg" alt="">
       <h2 class="hd-lg">The most locally sourced food</h2>
@@ -49,7 +57,6 @@
     </div>
   </div>
 </section>
-
 
   <section class="sec-2 white container">
     <img class="pattern" src="images\patterns\pattern-divide.svg" alt="">
@@ -65,24 +72,33 @@
       
       <div class="foods">
         <div class="food">
-          <img src="images\homepage\salmon-mobile@2x.jpg" alt="">
+          <picture>
+            <source media="(min-width: 480px)" srcset="images\homepage\salmon-desktop-tablet@2x.jpg"/>
+            <img src="images\homepage\salmon-mobile@2x.jpg" alt="">
+          </picture>
           <div class="food__details">
             <h2 class="hd-md">Seared Salmon Fillet</h2>
-            <p class="bd-1">Our locally sourced salmon served with a refreshing buckwheat summer salad.</p>
+            <p class="bd-2">Our locally sourced salmon served with a refreshing buckwheat summer salad.</p>
           </div>
         </div>
         <div class="food">
-          <img src="images\homepage\beef-mobile@2x.jpg" alt="">
+          <picture>
+            <source media="(min-width: 480px)" srcset="images\homepage\beef-desktop-tablet@2x.jpg"/>
+            <img src="images\homepage\beef-mobile@2x.jpg" alt="">
+          </picture>
           <div class="food__details">
             <h2 class="hd-md">Rosemary Filet Mignon</h2>
-            <p class="bd-1">Our prime beef served to your taste with a delicious choice of seasonal sides.</p>
+            <p class="bd-2">Our prime beef served to your taste with a delicious choice of seasonal sides.</p>
           </div>
         </div>
         <div class="food">
-          <img src="images\homepage\chocolate-mobile@2x.jpg" alt="">
+          <picture>
+            <source media="(min-width: 480px)" srcset="images\homepage\chocolate-desktop-tablet@2x.jpg"/>
+            <img src="images\homepage\chocolate-mobile@2x.jpg" alt="">
+          </picture>
           <div class="food__details">
             <h2 class="hd-md">Summer Fruit Chocolate Mousse</h2>
-            <p class="bd-1">Creamy mousse combined with summer fruits and dark chocolate shavings.</p>
+            <p class="bd-2">Creamy mousse combined with summer fruits and dark chocolate shavings.</p>
           </div>
         </div>
       </div>
@@ -91,13 +107,16 @@
 
 
 
-  <section class="sec-3 container">
-    <div class="bookings">
-      <img class="image" src="images\homepage\family-gathering-mobile@2x.jpg" alt="">
+  <section class="sec-3">
+    <div class="bookings container">
+      <picture>
+        <source media="(min-width: 768px)" srcset="images\homepage\family-gathering-desktop@2x.jpg"/>
+        <source media="(min-width: 480px)" srcset="images\homepage\family-gathering-tablet@2x.jpg"/>
+        <img class="image" src="images\homepage\family-gathering-mobile@2x.jpg" alt="">
+      </picture>
       <div class="details">
-        <form>
+        <form id="event-form">
           <div class="options">
-            
             <label class="option hd-sm">
               <input checked type="radio" id="family" name="option" value="family_gathering">
               <span>Family Gathering</span>
@@ -106,30 +125,35 @@
             <label class="option hd-sm">
               <input type="radio" id="special" name="option" value="special_event">
               <span>Special Events</span>
-            </label>
-                   
+            </label>  
             <label class="option hd-sm">
               <input type="radio" id="social" name="option" value="social_event">
               <span>Social Events</span>
             </label>
           </div>
         </form>
-        <h2 class="hd-lg">Family Gathering</h2>
-        <p class="descr">
-          We love catering for entire families. So please bring everyone along for a special meal with your
-          loved ones. We’ll provide a memorable experience for all.
-        </p>
-        <h2 class="hd-lg">Special Events</h2>
-        <p class="descr">
-          Whether it’s a romantic dinner or special date you’re celebrating with others we’ll look after you.
-          We’ll be sure to mark your special date with an unforgettable meal.
-        </p>
-        <h2 class="hd-lg">Social Events</h2>
-        <p class="descr">
-          Are you looking to have a larger social event? No problem! We’re more than happy to cater for big
-          parties. We’ll work with you to make your event a hit with everyone.
-        </p>
-        <div class="button hd-sm"><a href="#">Book a table</a></div>
+        <div class="events" id="family-event">
+          <h2 class="hd-lg">Family Gathering</h2>
+          <p class="descr bd-1">
+            We love catering for entire families. So please bring everyone along for a special meal with your
+            loved ones. We’ll provide a memorable experience for all.
+          </p>
+        </div>
+        <div class="events undisplayed " id="special-event">
+          <h2 class="hd-lg">Special Events</h2>
+          <p class="descr bd-1">
+            Whether it’s a romantic dinner or special date you’re celebrating with others we’ll look after you.
+            We’ll be sure to mark your special date with an unforgettable meal.
+          </p>
+        </div>
+        <div class="events undisplayed" id="social-event">
+          <h2 class="hd-lg">Social Events</h2>
+          <p class="descr bd-1">
+            Are you looking to have a larger social event? No problem! We’re more than happy to cater for big
+            parties. We’ll work with you to make your event a hit with everyone.
+          </p>
+        </div>
+        <a class="button dark hd-sm" href="booking.html">Book a table</a>
       </div>
     </div>
     
@@ -138,26 +162,27 @@
   <section class="sec-4 white container">
     <div class="ready">
       <h2 class="hd-lg">Ready to make a reservation?</h2>
-      <div class="button dark hd-sm"><a href="#">Book a table</a></div>
+      <a class="button transparent hd-sm" href="booking.html">Book a table</a>
     </div>
   </section>
 
 
-  <footer class="white container">
-    <img class="logo" src="./images/logo.svg" alt="">
-    <div class="info-flex">
-      <div class="info">
-        <span>Marthwaite, Sedbergh</span>
-        <span>Cumbria</span>
-        <span>+00 44 123 4567</span>
+    <footer class="white container">
+      <a href="index.html"><img class="logo" src="./images/logo.svg" alt=""></a>
+      <div class="info-flex">
+        <div class="info">
+          <span>Marthwaite, Sedbergh</span>
+          <span>Cumbria</span>
+          <span>+00 44 123 4567</span>
+        </div>
+        <div class="info">
+          <span>Open Times</span>
+          <span>Mon - Fri: 09:00 AM - 10:00 PM</span>
+          <span>Sat - Sun: 09:00 AM - 11:30 PM</span>
+        </div>
       </div>
-      <div class="info">
-        <span>Open Times</span>
-        <span>Mon - Fri: 09:00 AM - 10:00 PM</span>
-        <span>Sat - Sun: 09:00 AM - 11:30 PM</span>
-      </div>
-    </div>
-  </footer>
+    </footer>
 
+    <script src="script2.js"></script>
 </body>
 </html>
